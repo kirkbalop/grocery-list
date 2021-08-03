@@ -6,31 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap" rel="stylesheet">
     <title>Grocery List</title>
 </head>
 <body>
-    <!-- add items -->
-    <div class="addItems">
-        <h2 class="add-title">Add groceries</h2>
-        <form action="">
-            <input type="text" name="" id="add-input" class="add-input">
-            <button type="submit" class="add-submit">submit here</button>
-        </form>
-    </div>
-    <!-- display items-->
-    <div class="display-container">
-        <h2 class="display-title">Grocery List:</h2>
-        <div class="grocery-list">
-            <!--grocery item-->
-            <!-- <div class="grocery-item">
-                <h4 class="grocery-item-title">item</h4>
-                <a href="#" class="grocery-item-link">
-                </a> -->
-            </div>
-            <!-- end grocery item -->
-            <button type="submit" class="display-clear">clear items</button>
+    <div class='container'>
+        <!-- add items -->
+        <div class="add-items">
+            <h2 class="add-title title">Add groceries</h2>
+            <form action="">
+                <input type="text" name="" id="add-input" class="add-input">
+                <button type="submit" class="add-submit">submit here</button>
+            </form>
         </div>
-        
+        <!-- display items-->
+        <div class="display-container">
+            <h2 class="display-title title">Grocery List:</h2>
+            <div class="grocery-list">
+                <ul id='list'>
+                <!--grocery item-->
+                <!-- <li>Grocery Item</li> -->
+                </ul>
+                    <button type="submit" class="display-clear">clear items</button>
+                </div>
+                <!-- end grocery item -->
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,35 @@
+*, body {
+    font-family: 'Josefin Slab', serif;
+}
+
+.add-items, .display-container {
+    margin: auto;
+    width: 50%;
+    align-content: center;
+    border: 3px solid black;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.title, form {
+    text-align: center;
+    align-content: center;
+}
+
+.add-submit,.display-clear{
+    display: block;
+    width: 15%;
+    margin: 2rem auto 0 auto;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    outline: none;
+    padding-bottom: 5px; 
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 90%;
+}
