@@ -4,6 +4,7 @@ const addBtn = document.querySelector('.add-submit')
 const groceryList = document.querySelector('#list')
 const clearBtn = document.querySelector('.display-clear')
 const category = document.querySelector('#grocery-category')
+const catList = document.querySelector('#cat-list')
 
 // Event Listeners
 addBtn.addEventListener('click', addToList)
@@ -13,10 +14,10 @@ clearBtn.addEventListener('click', clearList)
 const storage = window.localStorage
 
 // localStorage Arrays
-const meats = []
-const produce = []
-const beverage = []
-const alcohol = []
+let meats = []
+let produce = []
+let beverage = []
+let alcohol = []
 
 // functions
 function addToList(event){
@@ -51,3 +52,7 @@ function clearList(event){
     list.innerHTML = ''
     storage.clear()
 }
+
+// function pageLoad(){
+//     let meats = JSON.parse(meats)
+// }
