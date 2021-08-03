@@ -3,12 +3,26 @@ const groceryAdd = document.querySelector('#add-input')
 const addBtn = document.querySelector('.add-submit')
 const groceryList = document.querySelector('#list')
 const clearBtn = document.querySelector('.display-clear')
+const category = document.querySelector('#grocery-category')
 
+// Event Listeners
 addBtn.addEventListener('click', addToList)
+clearBtn.addEventListener('click', clearList)
 
+// Global Variables
+const storage = window.localStorage
+
+// localStorage Arrays
+const meats = []
+const produce = []
+const beverage = []
+const alcohol = []
+
+// functions
 function addToList(event){
     event.preventDefault()
     let value = groceryAdd.value
+    let cat = category.value
     if(value === ''){
         alert('please include a valid entry')
     } else {
@@ -16,4 +30,24 @@ function addToList(event){
         entry.textContent = value
         groceryList.appendChild(entry)
     }
+    if(cat === ''){
+        alert('Please choose a category from the dropdown')
+    }else if(cat === 'meat'){
+        meats.push(value)
+        storage.setItem('meats', meats)
+    } else if(cat === 'produce'){
+        produce.push(value)
+        storage.setItem('produce', produce)
+    } else if(cat === 'beverage'){
+        beverage.push(value)
+        storage.setItem('beverage', beverage)
+    } else if (cat === 'alcohol'){
+        alcohol.push(value)
+        storage.setItem('alcohol', alcohol)
+    }
+}
+
+function clearList(event){
+    list.innerHTML = ''
+    storage.clear()
 }

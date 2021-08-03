@@ -16,6 +16,10 @@
     align-content: center;
 }
 
+.add-input {
+    width: 30%;
+}
+
 .add-submit,.display-clear{
     display: block;
     width: 15%;
