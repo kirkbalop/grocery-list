@@ -24,16 +24,15 @@ function addToList(event){
     event.preventDefault()
     let value = groceryAdd.value
     let cat = category.value
-    if(value === ''){
+    
+    if(value === '' || cat === ''){
         alert('please include a valid entry')
     } else {
         let entry = document.createElement('li')
         entry.textContent = value
         groceryList.appendChild(entry)
     }
-    if(cat === ''){
-        alert('Please choose a category from the dropdown')
-    }else if(cat === 'meat'){
+    if(cat === 'meat'){
         meats.push(value)
         storage.setItem('meats', meats)
     } else if(cat === 'produce'){
@@ -54,5 +53,5 @@ function clearList(event){
 }
 
 // function pageLoad(){
-//     let meats = JSON.parse(meats)
+//    
 // }

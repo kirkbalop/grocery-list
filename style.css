@@ -37,3 +37,9 @@
 input {
     width: 90%;
 }
+
+.grocery-list {
+    margin: 0 35% 0;
+    width: auto;
+    align-content: center;
+}
