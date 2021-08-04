@@ -34,16 +34,16 @@ function addToList(event){
     }
     if(cat === 'meat'){
         meats.push(value)
-        storage.setItem('meats', meats)
+        storage.setItem('meats', JSON.stringify(meats))
     } else if(cat === 'produce'){
         produce.push(value)
-        storage.setItem('produce', produce)
+        storage.setItem('produce', JSON.stringify(produce))
     } else if(cat === 'beverage'){
         beverage.push(value)
-        storage.setItem('beverage', beverage)
+        storage.setItem('beverage', JSON.stringify(beverage))
     } else if (cat === 'alcohol'){
         alcohol.push(value)
-        storage.setItem('alcohol', alcohol)
+        storage.setItem('alcohol', JSON.stringify(alcohol))
     }
 }
 
@@ -52,6 +52,37 @@ function clearList(event){
     storage.clear()
 }
 
-// function pageLoad(){
-//    
-// }
+function pageLoad(){
+   let meatRestore = JSON.parse(storage.getItem('meats'))
+   let produceRestore = JSON.parse(storage.getItem('produce'))
+   let beverageRestore = JSON.parse(storage.getItem('beverage'))
+   let alcoholRestore = JSON.parse(storage.getItem('alcohol'))
+
+   function restoreList(){
+       meatRestore.forEach(meat => {
+        let entry = document.createElement('li')
+        entry.textContent = meat
+        groceryList.appendChild(entry)
+       })
+
+       produceRestore.forEach(veg => {
+        let entry = document.createElement('li')
+        entry.textContent = veg
+        groceryList.appendChild(entry)
+       })
+
+       beverageRestore.forEach(bev => {
+        let entry = document.createElement('li')
+        entry.textContent = bev
+        groceryList.appendChild(entry)
+       })
+
+       alcoholRestore.forEach(alc => {
+        let entry = document.createElement('li')
+        entry.textContent = alc
+        groceryList.appendChild(entry)
+       })
+   }
+   restoreList()
+}
+pageLoad()
