@@ -5,6 +5,7 @@ const groceryList = document.querySelector("#list");
 const clearBtn = document.querySelector(".display-clear");
 const category = document.querySelector("#grocery-category");
 const catList = document.querySelector("#cat-list");
+const listItems = list.childNodes;
 
 // Event Listeners
 addBtn.addEventListener("click", addToList);
@@ -29,7 +30,6 @@ function addToList(event) {
     alert("please include a valid entry");
   } else {
     let entry = document.createElement("li");
-    entry.textContent = value;
     groceryList.appendChild(entry);
   }
   if (cat === "meat") {
@@ -44,6 +44,10 @@ function addToList(event) {
   } else if (cat === "alcohol") {
     alcohol.push(value);
     storage.setItem("alcohol", JSON.stringify(alcohol));
+  }
+  for (let i = 0; i < listItems.length; i++) {
+    listItems[i].classList.add(cat);
+    listItems[i].textContent = value;
   }
 }
 
@@ -61,29 +65,33 @@ function pageLoad() {
   let alcoholRestore = JSON.parse(storage.getItem("alcohol"));
 
   function restoreList() {
-    //   iterate over arrays to repopulate list
+    // iterate over arrays to repopulate list
     meatRestore.forEach((meat) => {
       let entry = document.createElement("li");
       entry.textContent = meat;
       groceryList.appendChild(entry);
+      entry.classList.add("meat");
     });
 
     produceRestore.forEach((veg) => {
       let entry = document.createElement("li");
       entry.textContent = veg;
       groceryList.appendChild(entry);
+      entry.classList.add("produce");
     });
 
     beverageRestore.forEach((bev) => {
       let entry = document.createElement("li");
       entry.textContent = bev;
       groceryList.appendChild(entry);
+      entry.classList.add("beverage");
     });
 
     alcoholRestore.forEach((alc) => {
       let entry = document.createElement("li");
       entry.textContent = alc;
       groceryList.appendChild(entry);
+      entry.classList.add("alcohol");
     });
   }
   restoreList();

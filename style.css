@@ -47,3 +47,15 @@ input {
   width: auto;
   align-content: center;
 }
+
+.meat::marker {
+  color: red;
+}
+
+.produce::marker {
+  color: green;
+}
+
+.beverage::marker {
+  color: blue;
+}
