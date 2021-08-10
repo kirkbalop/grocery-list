@@ -25,6 +25,10 @@ function addToList(event) {
   event.preventDefault();
   let value = groceryAdd.value;
   let cat = category.value;
+  let span = document.createElement("span");
+  let innerSpan = document.createElement("i");
+  span.innerHTML = innerSpan;
+  innerSpan.classList.add("far", "fa-trash-alt");
 
   if (value === "" || cat === "") {
     alert("please include a valid entry");
@@ -48,6 +52,7 @@ function addToList(event) {
   for (let i = 0; i < listItems.length; i++) {
     listItems[i].classList.add(cat);
     listItems[i].textContent = value;
+    // listItems[i].innerHTML = span;
   }
 }
 
