@@ -46,16 +46,16 @@ function addToList(event) {
     groceryList.appendChild(entry);
   }
 
-  if (cat === "meat") {
+  if (cat === "meat" && !meats.includes(value)) {
     meats.push(value);
     storage.setItem("meats", JSON.stringify(meats));
-  } else if (cat === "produce") {
+  } else if (cat === "produce" && !produce.includes(value)) {
     produce.push(value);
     storage.setItem("produce", JSON.stringify(produce));
-  } else if (cat === "beverage") {
+  } else if (cat === "beverage" && !beverage.includes(value)) {
     beverage.push(value);
     storage.setItem("beverage", JSON.stringify(beverage));
-  } else if (cat === "alcohol") {
+  } else if (cat === "alcohol" && !alcohol.includes(value)) {
     alcohol.push(value);
     storage.setItem("alcohol", JSON.stringify(alcohol));
   }
