@@ -20,6 +20,9 @@ let produce = [];
 let beverage = [];
 let alcohol = [];
 
+// General value array for duplicate avoidance
+let values = [];
+
 // Functions
 function addToList(event) {
   event.preventDefault();
@@ -30,9 +33,14 @@ function addToList(event) {
   span.innerHTML = innerSpan;
   innerSpan.classList.add("far", "fa-trash-alt");
 
+  if (values.includes(value)) {
+    alert("You've already added this item to the list!");
+  }
+
   if (value === "" || cat === "") {
     alert("please include a valid entry");
   } else {
+    values.push(value);
     let entry = document.createElement("li");
     entry.classList.add(cat);
     entry.innerHTML = span;
