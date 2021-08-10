@@ -34,8 +34,12 @@ function addToList(event) {
     alert("please include a valid entry");
   } else {
     let entry = document.createElement("li");
+    entry.classList.add(cat);
+    entry.innerHTML = span;
+    entry.textContent = value;
     groceryList.appendChild(entry);
   }
+
   if (cat === "meat") {
     meats.push(value);
     storage.setItem("meats", JSON.stringify(meats));
@@ -48,11 +52,6 @@ function addToList(event) {
   } else if (cat === "alcohol") {
     alcohol.push(value);
     storage.setItem("alcohol", JSON.stringify(alcohol));
-  }
-  for (let i = 0; i < listItems.length; i++) {
-    listItems[i].classList.add(cat);
-    listItems[i].textContent = value;
-    // listItems[i].innerHTML = span;
   }
 }
 
