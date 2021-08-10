@@ -33,12 +33,10 @@ function addToList(event) {
   span.innerHTML = innerSpan;
   innerSpan.classList.add("far", "fa-trash-alt");
 
-  if (values.includes(value)) {
-    alert("You've already added this item to the list!");
-  }
-
   if (value === "" || cat === "") {
     alert("please include a valid entry");
+  } else if (values.includes(value)) {
+    alert("You've already added that item to the list!");
   } else {
     values.push(value);
     let entry = document.createElement("li");
